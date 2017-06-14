@@ -1,0 +1,73 @@
+#!/bin/bash
+
+# Source function library.
+. /etc/rc.d/init.d/functions
+
+BASEDIR="/opt/iHi"
+PIDDIR="/opt/iHi/pid"
+BINDIR="/opt/iHi/bin"
+LRF=lrd
+MSMF=msmd
+COMMAND=$1
+LRPORT="9001 9007 9008 9009"
+MSMPORT="2003 2006"
+
+function usage(){
+	echo "Usage: $0 (start|stop|status|restart)"
+}
+
+function start(){
+	for port in $LRPORT
+	do
+		${BINDIR}/${LRF} start $port
+	done	
+
+	for port in $MSMPORT
+	do
+		${BINDIR}/${MSMF} start $port
+	done	
+}
+
+function stop(){
+	for port in $LRPORT
+	do
+		${BINDIR}/${LRF} stop $port
+	done	
+
+	for port in $MSMPORT
+	do
+		${BINDIR}/${MSMF} stop $port
+	done	
+}
+
+function status_i(){
+	for port in $LRPORT
+	do
+		${BINDIR}/${LRF} status $port
+	done	
+
+	for port in $MSMPORT
+	do
+		${BINDIR}/${MSMF} status $port
+	done	
+}
+
+case $COMMAND in
+	start)
+		start 
+		;;
+	stop)
+		stop 
+		;;
+	status)
+		status_i
+		;;
+	restart)
+		stop
+		start
+		;;
+	*)
+		usage
+		;;
+esac
+

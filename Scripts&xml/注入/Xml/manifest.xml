@@ -1,0 +1,74 @@
+﻿############################################################
+#This manifest file spec is for streamer p3.1.0
+#Version: 1.0
+#Createdate: 2011 03-18
+#Creator: Qintao Luo
+############################################################
+##############
+#upload
+##############
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <serverid>3</serverid>    #### stream id
+  <reporter>http://172.16.1.37/index.php/Admin/Interface</reporter>    #####report to url
+  <upload protocol="full">     #####operation{upload,delete}
+    <content>
+      <ctype>live</ctype>      ####content type:{live,vod}
+      <guid>default-1a1eca269df406a576408cb9b33d3354</guid>    ####content Unique  id
+      <description/>    ####content description, max lengh=64B
+      <title>txc-live</title>    ####content title, max lengh=64B
+      <priority>5</priority>   ### task priority{[0-9]}
+      <time/>
+      <createdate>2011-03-08</createdate>
+      <publishdate>2011-03-08</publishdate>
+      <expireddate>2038-01-01</expireddate>
+      <last_modify/>
+      <streamsense>0</streamsense>    ####rate adapter enable  {0,1}
+      <files>
+        <file>
+          <video/>                    #### video device name
+          <audio/>                   #### audio device name
+          <standard/>             #### {NTSC, NTSC_23, PAL, HD_1080p_23, HD_1080p_24 , HD_1080p_25 , HD_1080p_29, HD_1080p_30, HD_1080i_50, HD_1080i_59, HD_1080i_60, HD_720p_50, HD_720p_59, HD_720p_60}
+          <outformat/>           ####output format {mp4, 3gp, flv, ts},当vod需要转格式的时候填写
+          <format>flv</format>    #### file format {mp4, 3gp, flv, wmv, dfmp4, ts}
+          <server>txc-http</server>    #### Only for live，server type {base,http, wms, wme, flv, tss, tss_udp, udp, rtmp, rtp, rtsp, rtmp_passive,rtmp_psv_mgr,cache,mp3,vcc, txc-http, txc-rtsp, mcast_trigger }
+          <name>http://172.16.1.244:8088/flv0</name>    ####For vod it is file name;  For live it is source address.
+          <codec>x264</codec>    ####codec {h264,x264,h263,mpeg4,mpeg2,avc,wmv9,mp3}，需要转codec的时候填写
+          <bitrate>800</bitrate>    ####bitrate ,kbps{32----10000},32k--10m，需要转码率的时候填写
+          <streamsense>0</streamsense>  ####rate adapter enable  {0:disable,1:enable}
+          <resolution>6</resolution>     ####resolution {1:sqcif, 2:qcif, 3:cif, 4:4cif, 5:16cif, 6:dcif, 7:480p, 8:720p, 9:1080i, 10:qvga, 11:vga, 12:wvga, 13:wxvga, 14:sxga}，需要改变resolution的时候填写
+          <multicast/>                              ####mutilcast address
+          <time/>                                     ####ingest time{}
+          <protocol/>                              ####xml protocol{2:mini,3:full, 4:small,}
+          <file_uuid>278</file_uuid>    ####file id
+          <timeshift>-2</timeshift>       #### timeshift data save time. {-2:use confige file ,  -1:save forever, 0: not save, n: save n seconds,}
+          <download>1</download>    ####Only for vod是否下载{0:not download, 1:download},如果不填默认是1
+          <status>valid</status>           #### file status,  {valid, invalid}
+        </file>
+      </files>
+    </content>
+  </upload>
+</root>
+
+#######################
+#delete
+#######################
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <serverid>3</serverid>    #### stream id
+  <reporter>http://172.16.1.37/index.php/Admin/Interface</reporter>    #####report to url
+  <delete>     #####operation{upload,delete}
+    <content>
+      <ctype>live</ctype>      ####content type:{live,vod}
+      <guid>default-1a1eca269df406a576408cb9b33d3354</guid>    ####content Unique  id
+      <priority>5</priority>   ### task priority{[0-9]}
+      <time/>
+      <files>
+        <file>
+          <name>http://172.16.1.244:8088/flv0</name>    ####For vod it is file name;  For live it is source address.
+          <file_uuid>278</file_uuid>    ####file id
+        </file>
+      </files>
+    </content>
+  </delete>
+</root>

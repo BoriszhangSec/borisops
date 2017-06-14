@@ -1,0 +1,35 @@
+<root>
+    <upload>
+        <content>
+            <ctype>live</ctype>
+            <streamsense>1</streamsense>
+            <files>
+                <file>
+                    <bitrate>200</bitrate>
+                    <name>udp://228.0.0.100:5004</name>
+                    <format>ts</format>
+                    <codec>h264</codec>
+                    <server>tss_udp</server>
+                </file>
+                <file>
+                    <bitrate>800</bitrate>
+                    <name>udp://228.0.0.100:5005</name>
+                    <format>ts</format>
+                    <codec>h264</codec>
+                    <server>tss_udp</server>
+                </file>
+                <file>
+                    <bitrate>2500</bitrate>
+                    <name>udp://228.0.0.100:5006</name>
+                    <format>ts</format>
+                    <codec>h264</codec>
+                    <server>tss_udp</server>
+                </file>
+            </files>
+            <server>tss_udp</server>
+            <title>ts live ra</title>
+            <guid>tslive_ra</guid>
+            <description></description>
+        </content>
+    </upload>
+</root>

@@ -1,0 +1,20 @@
+<root>
+	<upload>
+		<content>
+			<ctype>live</ctype>
+			<guid>7po@hnws-7po</guid>
+			<title>hnws</title>
+			<files>
+				<file>
+					<format>ts</format>
+					<server>TSS</server>
+					<name>http://nju-ad.jstv.streamocean.net/live/hnws_ad?fmt=x264_700k_mpegts</name>
+					<codec>x264</codec>
+					<bitrate>700</bitrate>
+					<streamsense>0</streamsense>
+					<timeshift>0</timeshift>
+				</file>
+			</files>
+		</content>
+	</upload>
+</root>

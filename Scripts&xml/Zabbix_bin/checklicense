@@ -1,0 +1,27 @@
+#!/bin/sh
+# MANAGED BY PUPPET
+
+#
+cPath=/SO/bin/lic_read
+
+licDay=`$cPath -l`
+
+#if [ $licDay -ge "-2" ];then
+#  if [ $licDay -eq "-1" ];then
+#    echo "0"
+#  else
+#    echo "$licDay"
+#  fi
+#else
+#  echo "0"
+#fi
+
+case $licDay in
+  "-2"|"1"|"3"|"7"|"15")
+    echo "$licDay"
+    ;;
+  *)
+    echo "0"
+    ;;
+esac
+

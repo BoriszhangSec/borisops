@@ -1,0 +1,20 @@
+<root>
+	<upload protocol="full">
+		<content>
+			<ctype>live</ctype>
+			<guid>jswstest</guid>
+			<title>jswstest</title>
+			<files>
+				<file>
+					<format>flv</format>
+					<server>RTMP_PASSIVE</server>
+					<name>jswstest</name>
+					<codec>x264</codec>
+					<bitrate>1000</bitrate>
+					<streamsense>0</streamsense>
+					<timeshift>0</timeshift>
+				</file>
+			</files>
+		</content>
+	</upload>
+</root>

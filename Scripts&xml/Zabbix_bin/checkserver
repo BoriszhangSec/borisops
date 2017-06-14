@@ -1,0 +1,12 @@
+# MANAGED BY PUPPET
+
+starttime=`date -u +%s`
+ret_text=`echo "{'api_key':'179c0e3c','messages':[{'id':1,'command':'SYS_SERVICE_STATE'}]}"| unix2dos | nc $1 3001 -w 10`
+line=`echo $ret_text|grep "\"result\": \[ 0 \]"|wc -l`
+endtime=`date -u +%s`
+intval=`expr $endtime - $starttime`
+if [ $intval -lt 10 ] && [ $line -eq 1 ];then
+    echo 1
+else
+    echo 0
+fi

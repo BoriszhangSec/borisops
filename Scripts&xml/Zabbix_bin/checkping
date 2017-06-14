@@ -1,0 +1,127 @@
+#!/bin/sh
+# MANAGED BY PUPPET
+
+#
+# Version Author Date       Description
+# ------- ------ ---------- ------------------------
+# v1.0    Jinbo  2011-09-14 create
+#
+
+if [ $# -ne 2 ];then
+  echo "usage $0 : hostname field(2:loss 3:avg 4:max)"
+  exit 1
+fi
+
+hostn=$1
+field=$2
+#lossn=3
+
+## ca loss 95; others 3
+if [ ${hostn} == "ca" ];then
+  lossn=95
+else
+  lossn=3
+  #lossn=30
+fi
+
+logname=ping.${hostn}.streamocean.net.log
+logpath=/tmp/diag_check/log_ping
+
+if [ ! -e $logpath/$logname ];then
+  echo "$logname don't exist"
+  exit 2
+fi
+
+checkloss()
+{
+  for lossnu in ${getline[@]}
+  do
+    #if [ $lossnu -ge 3 ];then
+    if [ $lossnu -ge ${lossn} ];then
+      let flg=0
+      #let flgloss=$lossnu
+      continue
+    else
+      let flg=1
+      let flgloss=0
+      break
+    fi
+  done
+
+  if [ $flg -eq 0 ];then
+    if [ ${getline[0]} -ge ${getline[1]} ];then
+      tmpdata=${getline[0]}
+    else
+      tmpdata=${getline[1]}
+    fi
+    
+    if [ ${getline[2]} -ge $tmpdata ];then
+      flgloss=${getline[2]}
+    else
+      flgloss=$tmpdata
+    fi
+  fi
+
+  return $flgloss
+
+}
+
+checkdelay()
+{
+  tmp1=${getline[0]}
+  tmp2=${getline[1]}
+  tmp3=${getline[2]}
+
+  if [[ $tmp1 > $tmp2 ]];then
+    tmp=$tmp1
+  else
+    tmp=$tmp2
+  fi
+
+  if [[ $tmp > $tmp3 ]];then
+    echo $tmp
+  else
+    echo $tmp3
+  fi
+
+}
+
+
+fline=`wc -l $logpath/$logname | awk '{print $1}'`
+if [ $fline -ge 3 ];then
+  getline=(`tail -3 $logpath/$logname | awk -F":" '{print $"'${field}'"}'`)
+elif [ $fline -gt 0 ];then
+  getline=(`tail -$fline $logpath/$logname | awk -F":" '{print $"'${field}'"}'`)
+else
+  echo "$logpath/$logname is empty"
+  exit 3
+fi
+#echo ${getline[@]}
+
+case $field in
+  2)
+   checkloss
+   sendflg=$?
+   echo $sendflg
+   #echo "checkloss flg is: $sendflg"
+   ;;
+  3|4)
+   checkdelay
+   #sendflg=$?
+   #echo "checkdelay flg is: $sendflg"
+   ;;
+  *)
+   echo "error"
+   ;;
+esac
+
+
+
+
+
+
+
+
+
+
+

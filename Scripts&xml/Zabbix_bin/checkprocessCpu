@@ -1,0 +1,18 @@
+# MANAGED BY PUPPET
+
+if [ $# -ne 1 ];then
+  echo "usage: $0 processName"
+  exit 1
+fi
+
+processName="$1"
+
+processn=`/bin/ps aux | grep "$processName" | egrep -v "grep|zabbix"` >& /dev/null
+if [ $? -ne 0 ];then
+  #echo "-1" >> /tmp/tmp.log
+  echo "-1"
+else
+  proccpu=`echo "$processn" | awk '{print $3}'`
+  #echo "$proccpu" >> /tmp/tmp.log
+  echo "$proccpu"
+fi

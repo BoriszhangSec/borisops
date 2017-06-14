@@ -1,0 +1,20 @@
+<root>
+	<upload>
+		<content>
+			<files>
+				<file>
+					<name>http://127.0.0.1:80/live/7po@hnws-7po?fmt=x264_700k_mpegts</name>
+					<format>flv</format>
+					<timeshift>0</timeshift>
+					<server>ts2flv-http</server>
+					<codec>x264</codec>
+					<streamsense>0</streamsense>
+					<bitrate>700</bitrate>
+				</file>
+			</files>
+			<guid>7po@hnws-7po</guid>
+			<ctype>live</ctype>
+			<title>7po@hnws-7po</title>
+		</content>
+	</upload>
+</root>

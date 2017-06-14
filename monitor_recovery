@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# Source function library.
+. /etc/rc.d/init.d/functions
+
+BASEDIR="/opt/iHi"
+PIDDIR="/opt/iHi/pid"
+BINDIR="/opt/iHi/bin"
+LRF=lrd
+MSMF=msmd
+LRPORT="9001 9007 9008 9009"
+MSMPORT="2003 2006"
+MRLOG="/opt/iHi/logs/mrlog"
+
+function monitor_recovery(){
+	for port in $LRPORT
+	do
+		re=`${BINDIR}/${LRF} statusc $port`
+		if [ $re -eq 0 ] 
+		then
+			echo "`date "+%Y:%m:%d %H:%M:%S"` $port $re" >> $MRLOG
+			${BINDIR}/${LRF} start $port >> $MRLOG
+		fi
+	done	
+
+	for port in $MSMPORT
+	do
+		re=`${BINDIR}/${MSMF} statusc $port`
+		if [ $re -eq 0 ]
+        then
+			echo "`date "+%Y:%m:%d %H:%M:%S"` $port $re" >> $MRLOG
+			${BINDIR}/${MSMF} start $port >> $MRLOG
+        fi
+	done	
+}
+
+monitor_recovery

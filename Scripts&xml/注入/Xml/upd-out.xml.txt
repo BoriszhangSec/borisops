@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<serverid>1</serverid>
+	<reporter><![CDATA[]]></reporter>
+	<task_uuid></task_uuid>
+	<upload protocol="full">
+		<content>
+			<ctype>live</ctype>
+			<guid>yzg_vir_out_udp</guid>
+			<priority>5</priority>
+			<expireddate>2038-01-01</expireddate>
+			<streamsense>1</streamsense>
+			<files>
+				<file>
+					<video/>
+					<audio/>
+					<standard/>
+					<format>ts</format>
+					<server>tss</server>
+					<transcode_type>0</transcode_type>
+					<multicast>225.2.2.1:8888</multicast>
+					<name><![CDATA[http://127.0.0.1/live/yzg_vir_shtv_700_ra?fmt=x264_700k_mpegts&size=1280x720]]></name>
+					<codec>x264</codec>
+					<bitrate>700</bitrate>
+					<resolution>8</resolution>
+					<corrid></corrid>
+					<timeshift>60</timeshift>
+					<status>valid</status>
+				</file>
+
+				<file>
+					<video/>
+					<audio/>
+					<standard/>
+					<format>ts</format>
+					<server>tss</server>
+					<transcode_type>0</transcode_type>
+					<multicast>225.2.2.1:8889</multicast>
+					<name><![CDATA[http://127.0.0.1/live/yzg_vir_shtv_1200_ra?fmt=x264_700k_mpegts&size=1280x720]]></name>
+					<codec>x264</codec>
+					<bitrate>1200</bitrate>
+					<resolution>8</resolution>
+					<corrid></corrid>
+					<timeshift>60</timeshift>
+					<status>valid</status>
+				</file>
+
+			</files>
+		</content>
+	</upload>
+</root> 

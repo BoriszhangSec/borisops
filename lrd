@@ -1,0 +1,131 @@
+#!/bin/bash
+
+# Source function library.
+. /etc/rc.d/init.d/functions
+
+BASEDIR="/opt/iHi"
+PIDDIR="/opt/iHi/pid"
+IP=
+COMMAND=$1
+PARA=$2
+STATUS=
+
+function usage(){
+	echo "Usage: $0 (start|stop|status|statusc|restart) [port]"
+}
+
+function getip(){
+	eth0IP=`ifconfig eth0 2> /dev/null |grep "inet addr"| cut -f 2 -d ":"|cut -f 1 -d " "`
+	bond0IP=`ifconfig bond0 2> /dev/null |grep "inet addr"| cut -f 2 -d ":"|cut -f 1 -d " "`
+	if [ "$eth0IP" != "" ]
+	then
+		IP=$eth0IP
+	elif [ "$bond0IP" != "" ]
+	then
+		IP=$bond0IP
+	fi
+}
+
+
+function status_i(){
+	serviceStatus=`ps -ef | grep $PARA | grep -Ev "grep|sh|zabbix_get" | wc -l`
+	if [ $serviceStatus -eq 1 -a -s "${PIDDIR}/${PARA}.pid" ]
+	then
+		STATUS=1
+		echo "$PARA is running."
+	else
+		STATUS=0
+		echo "$PARA is stoped."
+	fi			
+}
+
+function status_r(){
+	serviceStatus=`ps -ef | grep $PARA | grep -Ev "grep|sh|zabbix_get" | wc -l`
+	if [ $serviceStatus -eq 1 -a -s "${PIDDIR}/${PARA}.pid" ]
+	then
+		STATUS=1
+	else
+		STATUS=0
+	fi			
+}
+
+function status_c(){
+	serviceStatus=`ps -ef | grep $PARA | grep -Ev "grep|sh|zabbix_get" | wc -l`
+	if [ $serviceStatus -eq 1 -a -s "${PIDDIR}/${PARA}.pid" ]
+	then
+		STATUS=1
+		echo $STATUS
+	else
+		STATUS=0
+		echo $STATUS
+	fi			
+}
+
+function start(){
+	status_r $PARA 
+	if [ $STATUS -eq 0 ]
+	then
+		echo -n "Starting $PARA..."
+		getip
+		[ -d ${BASEDIR}/lr${PARA} ] && cd ${BASEDIR}/lr${PARA}
+		nohup python2.6 lrNode.pyc $IP $PARA > /dev/null 2>&1 &
+		status_r $PARA
+		if [ $serviceStatus -eq 1 ]
+		then
+			echo $! > ${PIDDIR}/${PARA}.pid
+			action " " /bin/true
+		else
+			action " " /bin/false
+		fi
+	else
+		echo "$PARA is alreadly running."
+	fi	
+}
+
+function stop(){
+	status_r $PARA
+	if [ $STATUS -eq 1 ]
+	then
+		echo -n "Stopping $PARA..."
+		kill `cat ${PIDDIR}/${PARA}.pid`
+		status_r $PARA
+		if [ $STATUS -eq 0 ]
+		then
+			rm -rf ${PIDDIR}/${PARA}.pid
+			action " " /bin/true 
+		else
+			action " " /bin/false
+		fi
+	else
+		echo "$PARA is alreadly stoped."
+		if [ -e $PIDDIR/${PARA}.pid ]
+        then
+            echo "Del stopped lr's pid file." 
+            rm -f $PIDDIR/${PARA}.pid
+        fi
+
+	fi
+}
+
+case $COMMAND in
+	start)
+		start $PARA
+		;;
+	stop)
+		stop $PARA
+		;;
+	restart)
+		stop
+		start
+		;;
+	status)
+		status_i $PARA
+		;;
+	statusc)
+		status_c $PARA
+		;;
+	*)
+		usage
+		;;
+esac
+

@@ -1,0 +1,19 @@
+<root>
+  <upload>
+    <content>
+      <ctype>live</ctype>
+      <files>
+        <file>
+          <name>http://172.16.3.8:8080/inlet.sdp</name>
+          <format>dfmp4</format>
+          <codec>h264</codec>
+          <bitrate>250</bitrate>
+          <server>rtp</server>
+        </file>
+      </files>
+      <title>rtplive</title>
+      <guid>rtplive</guid>
+      <description></description>
+    </content>
+  </upload>
+</root>

@@ -1,0 +1,18 @@
+<root>
+  <delete>
+    <content>
+      <ctype>live</ctype>
+      <files>
+        <file>
+          <bitrate>1000</bitrate>
+          <name>udp://127.0.0.1:65530</name>
+          <format>ts</format>
+          <codec>h264</codec>
+          <server>tss_udp</server>
+        </file>
+      </files>
+      <title>jswstest</title>
+      <guid>jswstest</guid>
+    </content>
+  </delete>
+</root>
