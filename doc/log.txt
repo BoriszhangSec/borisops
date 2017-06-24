@@ -1,0 +1,12 @@
+anzhuang pip
+apt install python-setuptools
+easy_install pip
+
+vim----/etc/.vimrc 
+set clindent shitwidth=4  suojin
+set tabstop=2 tab konggeshu
+set number
+
+dos2UNIX filename
+
+apt install git -y
