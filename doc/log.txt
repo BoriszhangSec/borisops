@@ -10,3 +10,5 @@ set number
 dos2UNIX filename
 
 apt install git -y
+
+vbox vgrant OMserver centos
