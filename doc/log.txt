@@ -12,3 +12,9 @@ dos2UNIX filename
 apt install git -y
 
 vbox vgrant OMserver centos
+
+
+docker run --name jenkins -p 8090:8080 -v /var/jenkins_home jenkins
+
+system config
+https://wenku.baidu.com/view/c1e87648b4daa58da1114a37.html
