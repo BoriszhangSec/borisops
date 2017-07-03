@@ -11,4 +11,6 @@ dos2UNIX filename
 
 apt install git -y
 
-vbox vgrant OMserver centos
+vbox vgrant OMserver centos	
+
+vagrant box add my_first_box  https://github.com/tommy-muehle/puppet-vagrant-boxes/releases/download/1.1.0/centos-7.0-x86_64.box
