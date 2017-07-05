@@ -1,0 +1,96 @@
+http://blog.csdn.net/yjk13703623757/article/details/70040797  vargrant 安装centos7
+http://blog.csdn.net/yjk13703623757/article/details/70040797 
+https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/README.md gitlab docker 
+http://www.cnblogs.com/wintersun/p/6258900.html docker ci/cd
+https://about.gitlab.com/installation/#ubuntu gitlab 安装
+https://hub.docker.com/r/gitlab/gitlab-ce/ GitHub docker安装
+http://www.wklken.me/posts/2015/04/26/elk-for-nginx-log.html elk处理nginx日志
+https://segmentfault.com/a/1190000006062453 git分支管理策略
+http://www.360doc.com/content/14/0508/17/14416931_375851686.shtml git协同开发
+
+邮箱账号：zhanglt 123.abc
+
+https://docs.docker.com/engine/installation/linux/docker-ce/centos/#install-using-the-repository   docker install
+
+docker run --detach \
+    --hostname gitlab.example.com \
+    --publish 443:443 --publish 80:80 --publish 23:22 \
+    --name gitlab \
+    --restart always \
+    --volume /srv/gitlab/config:/etc/gitlab \
+    --volume /srv/gitlab/logs:/var/log/gitlab \
+    --volume /srv/gitlab/data:/var/opt/gitlab \
+    gitlab/gitlab-ce:latest
+    
+    
+sudo docker run --detach \
+    --hostname gitlab.example.com \
+    --publish 8929:80 --publish 2289:22 \
+    --name gitlab \
+    --volume /srv/gitlab/config:/etc/gitlab \
+    --volume /srv/gitlab/logs:/var/log/gitlab \
+    --volume /srv/gitlab/data:/var/opt/gitlab \
+    gitlab/gitlab-ce:latest
+    
+    
+gitlib docker
+https://docs.docker.com/engine/installation/linux/docker-ce/centos/#install-using-the-repository   docker install 
+启动gitlab
+    docker run --detach \
+    --hostname gitlab.example.com \
+    --publish 8929:80 --publish 2289:22 \
+    --name gitlab \
+    --restart always \
+    --volume /srv/gitlab/config:/etc/gitlab \
+    --volume /srv/gitlab/logs:/var/log/gitlab \
+    --volume /srv/gitlab/data:/var/opt/gitlab \
+    gitlab/gitlab-ce:latest
+ docker exec -it gitlab vi /etc/gitlab/gitlab.rb
+ 
+gitlab_rails['smtp_enable'] = true 
+gitlab_rails['smtp_address'] = "smtp.163.com" 
+gitlab_rails['smtp_port'] = 25 
+gitlab_rails['smtp_user_name'] = "zltalun@163.com" 
+gitlab_rails['smtp_password'] = "zltalun@@1" 
+gitlab_rails['smtp_domain'] = "163.com" 
+gitlab_rails['smtp_authentication'] = :login 
+gitlab_rails['smtp_enable_starttls_auto'] = true
+
+gitlab_rails['gitlab_email_from'] = "zltalun@163.com" 
+user["git_user_email"] = "zltalun@163.com"
+ 
+gitlab-rails console
+
+irb(main):003:0> Notify.test_email('992592914@qq.com', 'test', '11111').deliver_now
+
+jenkins docker 安装
+https://hub.docker.com/_/jenkins/  
+
+    
+
+sip 电话配置 668个/235排 
+115.28.185.61:6065    
+jhd6wetf
+0000#-1-8000
+10.1.30.100-121
+  
+
+顾明星  18210193778
+易市凯   余莹  18510665257 
+
+服务器资源统计
+
+jumpserver 安装
+smtp.163.com
+25
+sudo yum install ntp -y
+sudo ntpdate time.nist.gov
+sudo rdate -s time.nist.gov
+
+yz xafbmJ2ro95phe
+KDMGkpyjAbCsQT 实体机密码
+
+
+lvs sudo密码
+
+ 
