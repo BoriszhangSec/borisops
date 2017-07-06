@@ -105,7 +105,6 @@ ip电话工号调整
 echo "flush_all" | nc localhost 11211 清空缓存
 
 telnet 10.1.5.129 11211  flush_all
-
-stats items 查询存入的key
+stats items
 
 
