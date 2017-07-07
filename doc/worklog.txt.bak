@@ -97,14 +97,45 @@ KDMGkpyjAbCsQT 实体机密码
 修改服务器时间
 ip电话工号调整
 
+
 机票支付网关打不开，缓存问题有的人能打开，全打不开可能是支付网关服务器的问题
 10.1.5.129
 
 安装参考：http://www.centoscn.com/image-text/install/2016/0724/7673.html
 /usr/bin/memcached -u memcached -m 4000 -c 3000 -p 11211 -d  #-m指定最大内存，-c指定连接数
+/usr/local/bin/memcached -u memcached -m 10000 -c 3000 -p 11211 -d -vv >> /tmp/memcached-tickt.log 2>&1   -vv 指定日志目录
+/usr/local/bin/memcached -u memcached -m 10000 -c 3000 -p 11200 -d -vv >> /tmp/memcached-hotel.log 2>&1  
 echo "flush_all" | nc localhost 11211 清空缓存
 
 telnet 10.1.5.129 11211  flush_all
-stats items
+
+stats items 查询存入的key和数据条数
+
+机房走光缆，跟了一下
+
+
+网络配置
+DEVICE="eth0"
+ONBOOT="yes"
+TYPE=Ethernet
+BOOTPROTO=none
+IPADDR=10.1.5.174
+PREFIX=24
+GATEWAY=10.1.5.1
+DEFROUTE=yes
+#IPV4_FAILURE_FATAL=yes
+IPV6INIT=no
+
+/data0/scripts/tomcatctl.sh restart
+
+http://10.1.5.142:8080/NewTicket/system/main.jsp
+机票参数配置
+memcache
+
+http://10.1.32.211/hollycrm/portal.jsp
+国际机票测试地址
+
+新服务器：时间同步，网络配置，主机名，安全
+
 
 
