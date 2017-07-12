@@ -7,6 +7,8 @@ https://hub.docker.com/r/gitlab/gitlab-ce/ GitHub docker安装
 http://www.wklken.me/posts/2015/04/26/elk-for-nginx-log.html elk处理nginx日志
 https://segmentfault.com/a/1190000006062453 git分支管理策略
 http://www.360doc.com/content/14/0508/17/14416931_375851686.shtml git协同开发
+http://blog.csdn.net/l1902090/article/details/25660393 lvs配置
+http://www.cnblogs.com/liwei0526vip/p/6370103.html lvs配置
 
 邮箱账号：zhanglt 123.abc
 
@@ -138,3 +140,54 @@ http://10.1.32.211/hollycrm/portal.jsp
 新服务器：时间同步，网络配置，主机名，安全
 
 配置机票缓存服务器
+
+paas实现与运维管理
+
+更改nginx端口号：listen 80
+反向代理
+server {
+    listen       80;
+    server_name  10.1.40.72;
+    location /
+        {
+          index index.html;
+          proxy_pass http://localhost:8084;
+          proxy_set_header Host $host;
+          proxy_set_header X-Real-IP $remote_addr;
+          proxy_set_header REMOTE-HOST $remote_addr;
+          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        }
+
+}
+
+
+ssh -l gumx 10.1.40.2 防火墙登录
+映射记录修改
+Ssh 10.1.40.2
+Sudosu
+Vi /etc/pf.conf
+pass in quick on $ext_if proto tcp from any to $extvip75 port 995 rdr-to 10.1.40.168 port 995
+退出保存
+pfctl -f /etc/pf.conf
+增加坐席区外网访问权限：
+登陆：10.1.40.2后telnet192.168.0.78坐席区主交换上执行以下命令即可：需要进入特权模式
+例如：ip route-static 223.223.201.196 255.255.255.255 192.168.0.28
+保存：save
+lvs
+IPVS: Can't initialize ipvs: Protocol not available
+lsmod | grep ip_vs
+查看内核是否加载模块
+modprobe ip_vs modprobe ip_vs_wrr
+
+
+
+tomcat 不同用户启动问题，删除work下所有文件后再重启。
+keepalived 权重修改 198.197 /etc/keepalived/
+sip电话工号调整
+处理测试服务器
+清理197磁盘空间
+值班：
+ATS问题(<120000),国内机票，国际机票，新国际机票，酒店问题
+
+http://10.1.5.7:8080/NewTicket/userLoginAction.do 新机票预订url
+
