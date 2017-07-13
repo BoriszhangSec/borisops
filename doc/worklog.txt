@@ -91,7 +91,7 @@ smtp.163.com
 sudo yum install ntp -y
 sudo ntpdate time.nist.gov
 sudo rdate -s time.nist.gov
-
+ntpdate pool.ntp.org
 yz xafbmJ2ro95phe
 KDMGkpyjAbCsQT 实体机密码
 
@@ -190,4 +190,9 @@ sip电话工号调整
 ATS问题(<120000),国内机票，国际机票，新国际机票，酒店问题
 
 http://10.1.5.7:8080/NewTicket/userLoginAction.do 新机票预订url
+
+更新替换机器密码;129,74 i9rz1ioaLdBT
+
+
+
 

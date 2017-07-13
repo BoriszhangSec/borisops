@@ -180,8 +180,9 @@ lsmod | grep ip_vs
 modprobe ip_vs modprobe ip_vs_wrr
 
 
+
 tomcat 不同用户启动问题，删除work下所有文件后再重启。
-keepalived 权重修改
+keepalived 权重修改 198.197 /etc/keepalived/
 sip电话工号调整
 处理测试服务器
 清理197磁盘空间
@@ -189,4 +190,7 @@ sip电话工号调整
 ATS问题(<120000),国内机票，国际机票，新国际机票，酒店问题
 
 http://10.1.5.7:8080/NewTicket/userLoginAction.do 新机票预订url
+
+更新替换机器密码;129,74 i9rz1ioaLdBT
+
 
