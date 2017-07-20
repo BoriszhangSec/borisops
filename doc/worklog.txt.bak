@@ -9,6 +9,9 @@ https://segmentfault.com/a/1190000006062453 git分支管理策略
 http://www.360doc.com/content/14/0508/17/14416931_375851686.shtml git协同开发
 http://blog.csdn.net/l1902090/article/details/25660393 lvs配置
 http://www.cnblogs.com/liwei0526vip/p/6370103.html lvs配置
+http://blog.csdn.net/scdxmoe/article/details/53418649 saltstack
+http://blog.csdn.net/redguardtoo/article/details/7222501/ emacs  
+http://machael.blog.51cto.com/829462/211587/
 
 邮箱账号：zhanglt 123.abc
 
@@ -91,7 +94,7 @@ smtp.163.com
 sudo yum install ntp -y
 sudo ntpdate time.nist.gov
 sudo rdate -s time.nist.gov
-
+ntpdate pool.ntp.org
 yz xafbmJ2ro95phe
 KDMGkpyjAbCsQT 实体机密码
 
@@ -191,6 +194,61 @@ ATS问题(<120000),国内机票，国际机票，新国际机票，酒店问题
 
 http://10.1.5.7:8080/NewTicket/userLoginAction.do 新机票预订url
 
-更新替换机器密码;129,74 i9rz1ioaLdBT
+更新替换机器密码;129,74 root/i9rz1ioaLdBT
+更新机票代理服务器时间
+
+统计操作需要关闭的酒店服务器
+
+ps aux | grep salt-master
+
+酒店pnr问题，17.105，机票订单memcache缓存
 
 
+10.1.5.121（回调不能停机）信用卡信息不能为空的问题
+机票支付页面显示不能发送信息  第三方在维护也有可能支付平台空间满了，清日志操作/usr/local/
+部署开发环境
+机票网关支付页面链接不上、32.210 32.40节点访问不了新程序部署
+
+http://10.1.32.211/hollycrm/portal.jsp houlei/houlei
+
+ipvsadm  -l  --stats
+/sbin/ipvsadm -lcn | grep 10.1.32.80 查看lvs转发情况
+
+lvs 注释注意  
+
+ipvsadm -Lcn |awk '{print $3}'|sort  |uniq -c |sort -rn
+ipvsadm --list --timeout
+tcpdump -s 0 host 10.1.32.40 and dst port 80 -w zb_send.erl
+
+10.1.40.44 xyz/xafbmJ2ro95phe 加用户
+处理机票支付网关节点问题，排查机票支付网关lvs转发问题
+
+
+10.1.40.43~44 密码
+yz/DVsh@dus89+hCs54 root/Xhk@HD6s*dKJ=&4 
+
+210 lvs 配置
+/sbin/ifconfig lo:0 10.1.5.210 netmask 255.255.255.255 up  --lvs realserver配置 
+netstat -anlop | grep 10.1.32.80 
+
+cc网络
+机票打开慢，某个节点慢lvs调度问题
+
+机票支付api
+http://10.1.5.214:8080/payPlatform/services/payService?wsdl
+5.13的机票节点 支付有问题
+5.76 节点资源不足
+
+阿里云密码 tmc节点控制台961363
+web控制台密码 
+caott0317 
+1234qwer!@#$QWER              
+阿里云账号：                  
+xqlc12580                     
+密码：                        
+xqlc.com  
+aliyun-ecs实例密码：root/okm,lp*zaqxsw.Y
+                             
+
+                                  
+                              
