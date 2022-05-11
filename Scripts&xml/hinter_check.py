@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 
-import sys, os, struct, re
+import os
+import re
+import struct
+import sys
 from time import strftime, localtime
 
 PATTERN = re.compile("^([0-9a-fA-F]{32})-([0-9a-fA-F]{32})$")
@@ -8,15 +11,20 @@ PATTERN = re.compile("^([0-9a-fA-F]{32})-([0-9a-fA-F]{32})$")
 
 def usage(msg=None):
     if msg:
-        print msg
-    print "Usage:"
-    print "\t %s hinter_dir_path" % sys.argv[0]
+        print
+        msg
+    print
+    "Usage:"
+    print
+    "\t %s hinter_dir_path" % sys.argv[0]
     sys.exit(0)
+
 
 def str2num(s):
     data = s.decode("hex")
     a, b = struct.unpack("QQ", data)
     return float(a) + float(b) / 1e9
+
 
 if len(sys.argv) < 2:
     usage()
@@ -38,12 +46,16 @@ for f in files:
     hinters.append((start, end))
 
 hinters.sort()
+
+
 def range_print(rng):
-    s,e = rng
-    print "[%s - %s][%.3f - %.3f][%.3f]" % tuple(
-        map(lambda s:strftime("%Y%m%d %H:%M:%S", localtime(s)), rng)
+    s, e = rng
+    print
+    "[%s - %s][%.3f - %.3f][%.3f]" % tuple(
+        map(lambda s: strftime("%Y%m%d %H:%M:%S", localtime(s)), rng)
         + list(rng) + [e - s]
     )
+
 
 def check(curr, next):
     start = curr[1]
@@ -54,13 +66,16 @@ def check(curr, next):
         pass
     elif gap < 0:
         # overlap range
-        print "!!Overlap %.3f sec." % -gap
+        print
+        "!!Overlap %.3f sec." % -gap
     elif gap == 0:
-        print "!!Duplicated %.3f" % curr[0]
+        print
+        "!!Duplicated %.3f" % curr[0]
     else:
-        print "!!Missed %.3f sec." % gap
+        print
+        "!!Missed %.3f sec." % gap
     return next
-        
+
+
 ret = reduce(check, hinters)
 range_print(ret)
-

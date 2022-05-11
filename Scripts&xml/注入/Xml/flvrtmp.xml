@@ -1,20 +1,20 @@
-<root>     
-  <upload>
-    <content>
-      <ctype>live</ctype>
-      <files>
-        <file>
-          <bitrate>500</bitrate>
-          <name>rtmp://172.16.3.18/live/vp6stream</name>
-          <format>flv</format>
-          <codec>h264</codec>
-          <server>rtmp</server>
-        </file>
-      </files>
-      <title>rtmp</title>
-      <guid>rtmp</guid>
-      <description></description>
-      <createdate>2010-3-25</createdate>
-    </content>
-  </upload>
+<root>
+    <upload>
+        <content>
+            <ctype>live</ctype>
+            <files>
+                <file>
+                    <bitrate>500</bitrate>
+                    <name>rtmp://172.16.3.18/live/vp6stream</name>
+                    <format>flv</format>
+                    <codec>h264</codec>
+                    <server>rtmp</server>
+                </file>
+            </files>
+            <title>rtmp</title>
+            <guid>rtmp</guid>
+            <description></description>
+            <createdate>2010-3-25</createdate>
+        </content>
+    </upload>
 </root>

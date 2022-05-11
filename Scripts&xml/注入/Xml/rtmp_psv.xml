@@ -1,19 +1,20 @@
-<root>                                                                      <upload>
-    <content>
-      <ctype>live</ctype>
-      <files>
-        <file>
-          <bitrate>200</bitrate>
-          <name>can be any thing</name>
-          <format>flv</format>
-          <codec>h264</codec>
-          <server>rtmp_passive</server>
-        </file>
-      </files>
-      <title>flvlive1</title>
-      <guid>flvlive1</guid>
-      <description></description>
-      <createdate>2010-3-25</createdate>
-    </content>
-  </upload>
+<root>
+    <upload>
+        <content>
+            <ctype>live</ctype>
+            <files>
+                <file>
+                    <bitrate>200</bitrate>
+                    <name>can be any thing</name>
+                    <format>flv</format>
+                    <codec>h264</codec>
+                    <server>rtmp_passive</server>
+                </file>
+            </files>
+            <title>flvlive1</title>
+            <guid>flvlive1</guid>
+            <description></description>
+            <createdate>2010-3-25</createdate>
+        </content>
+    </upload>
 </root>

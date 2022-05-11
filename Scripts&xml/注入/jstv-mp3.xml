@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
-	<upload>
-		<content>
-			<title>jsws-mp3</title>
-			<ctype>live</ctype>
-			<guid>jsws-mp3</guid>
-			<files>
-				<file>
-					<name>http://192.168.160.20/live/jsws-mp3?fmt=mp3_32k_mp3&amp;size=720x576</name>
-					<format>mp3</format>
-					<timeshift>0</timeshift>
-					<server>mp3</server>
-					<codec>mp3</codec>
-					<streamsense>0</streamsense>
-					<bitrate>32</bitrate>
-				</file>
-			</files>
-		</content>
-	</upload>
+    <upload>
+        <content>
+            <title>jsws-mp3</title>
+            <ctype>live</ctype>
+            <guid>jsws-mp3</guid>
+            <files>
+                <file>
+                    <name>http://192.168.160.20/live/jsws-mp3?fmt=mp3_32k_mp3&amp;size=720x576</name>
+                    <format>mp3</format>
+                    <timeshift>0</timeshift>
+                    <server>mp3</server>
+                    <codec>mp3</codec>
+                    <streamsense>0</streamsense>
+                    <bitrate>32</bitrate>
+                </file>
+            </files>
+        </content>
+    </upload>
 </root>

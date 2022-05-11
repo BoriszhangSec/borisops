@@ -1,32 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
-	<upload protocol="full">
+    <upload protocol="full">
         <content>
             <ctype>live</ctype>
             <guid>hngq-vtime</guid>
             <description/>
-			<streamsense>1</streamsense>
+            <streamsense>1</streamsense>
             <files>
-				<file>
-                    <video/><audio/>
+                <file>
+                    <video/>
+                    <audio/>
                     <format>ts</format>
                     <server>TSS_UDP</server>
                     <name>udp://172.16.5.72:1234</name>
                     <codec>x264</codec>
-                    <bitrate>1400</bitrate>                    
+                    <bitrate>1400</bitrate>
                     <resolution></resolution>
                     <multicast/>
                     <timeshift>0</timeshift>
                     <download>1</download>
                 </file>
 
-				<file>
-                    <video/><audio/>
+                <file>
+                    <video/>
+                    <audio/>
                     <format>ts</format>
                     <server>TSS_UDP</server>
                     <name>udp://172.16.5.72:1235</name>
                     <codec>x264</codec>
-                    <bitrate>700</bitrate>                    
+                    <bitrate>700</bitrate>
                     <resolution></resolution>
                     <multicast/>
                     <timeshift>0</timeshift>

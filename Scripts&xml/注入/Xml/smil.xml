@@ -1,69 +1,77 @@
 <root>
-<reporter>http://172.16.1.232/aaaa</reporter>
-  <upload protocol="smil">
-  <content>
-    <ctype>live</ctype>
-    <guid>streamocean-vc</guid>
-    <files>
-      <file>
-        <timeshift>-2</timeshift>
-        <streamsense>1</streamsense>
-        <smil xmlns="http://www.w3.org/ns/SMIL" xml:id="root" version="3.0" baseProfile="x-OSVC">
-				  <head xml:id="head">
-				    <meta name="codec" content="x264"/>
-				    <meta name="format" content="ts"/>
-				    <meta name="bitrate" content="1500"/>
-				    <meta name="server" content="tss"/>
-				    <meta name="resolution" content="6"/>
-				  </head>
-				  <body xml:id="body">
-				    <seq repeatCount="indefinite">
-				      <video src="http://jxqzw.streamocean.com/vod/2011/08/24/streamocean-2C7F82B3-7EB8-E1BC-EDA9-B3D57B52E96D?fmt=x264_1625k_mpegts" repeatCount="1" clipEnd="npt=300s">
-				        <param name="ctype" value="vod" valuetype="data"/>
-				      </video>
-				      <video src="http://jxqzw.streamocean.com/vod/2011/08/24/streamocean-51A94E98-03CA-2A21-FF90-C580A4F97C1C?fmt=x264_1605k_mpegts" repeatCount="1" clipEnd="npt=300s">
-				        <param name="ctype" value="vod" valuetype="data"/>
-				      </video>
-				      <video src="http://jxqzw.streamocean.com/vod/2011/08/24/streamocean-1C83FCE5-2EB9-FD87-425B-80FEC05DFD02?fmt=x264_1619k_mpegts" repeatCount="1" clipEnd="npt=300s">
-				        <param name="ctype" value="vod" valuetype="data"/>
-				      </video>
-				      <video src="http://jxqzw.streamocean.com/vod/2011/08/24/streamocean-57A622B0-42D6-3A78-F9AA-A755522AD139?fmt=x264_1615k_mpegts" repeatCount="1" clipEnd="npt=300s">
-				        <param name="ctype" value="vod" valuetype="data"/>
-				      </video>
-				    </seq>
-				  </body>
-				</smil>
-      </file>
-      <file>
-        <timeshift>-2</timeshift>
-        <streamsense>1</streamsense>
-        <smil xmlns="http://www.w3.org/ns/SMIL" xml:id="root" version="3.0" baseProfile="x-OSVC">
-				  <head xml:id="head">
-				    <meta name="codec" content="x264"/>
-				    <meta name="format" content="ts"/>
-				    <meta name="bitrate" content="800"/>
-				    <meta name="server" content="tss"/>
-				    <meta name="resolution" content="6"/>
-				  </head>
-				  <body xml:id="body">
-				    <seq repeatCount="indefinite">
-				      <video src="http://jxqzw.streamocean.com/vod/2011/08/24/streamocean-2C7F82B3-7EB8-E1BC-EDA9-B3D57B52E96D?fmt=x264_878k_mpegts" repeatCount="1" clipEnd="npt=300s">
-				        <param name="ctype" value="vod" valuetype="data"/>
-				      </video>
-				      <video src="http://jxqzw.streamocean.com/vod/2011/08/24/streamocean-51A94E98-03CA-2A21-FF90-C580A4F97C1C?fmt=x264_866k_mpegts" repeatCount="1" clipEnd="npt=300s">
-				        <param name="ctype" value="vod" valuetype="data"/>
-				      </video>
-				      <video src="http://jxqzw.streamocean.com/vod/2011/08/24/streamocean-1C83FCE5-2EB9-FD87-425B-80FEC05DFD02?fmt=x264_876k_mpegts" repeatCount="1" clipEnd="npt=300s">
-				        <param name="ctype" value="vod" valuetype="data"/>
-				      </video>
-				      <video src="http://jxqzw.streamocean.com/vod/2011/08/24/streamocean-57A622B0-42D6-3A78-F9AA-A755522AD139?fmt=x264_875k_mpegts" repeatCount="1" clipEnd="npt=300s">
-				        <param name="ctype" value="vod" valuetype="data"/>
-				      </video>
-				    </seq>
-				  </body>
-				</smil>
-      </file>
-    </files>
-  </content>
-  </upload>
+    <reporter>http://172.16.1.232/aaaa</reporter>
+    <upload protocol="smil">
+        <content>
+            <ctype>live</ctype>
+            <guid>streamocean-vc</guid>
+            <files>
+                <file>
+                    <timeshift>-2</timeshift>
+                    <streamsense>1</streamsense>
+                    <smil xmlns="http://www.w3.org/ns/SMIL" xml:id="root" version="3.0" baseProfile="x-OSVC">
+                        <head xml:id="head">
+                            <meta name="codec" content="x264"/>
+                            <meta name="format" content="ts"/>
+                            <meta name="bitrate" content="1500"/>
+                            <meta name="server" content="tss"/>
+                            <meta name="resolution" content="6"/>
+                        </head>
+                        <body xml:id="body">
+                            <seq repeatCount="indefinite">
+                                <video src="http://jxqzw.streamocean.com/vod/2011/08/24/streamocean-2C7F82B3-7EB8-E1BC-EDA9-B3D57B52E96D?fmt=x264_1625k_mpegts"
+                                       repeatCount="1" clipEnd="npt=300s">
+                                    <param name="ctype" value="vod" valuetype="data"/>
+                                </video>
+                                <video src="http://jxqzw.streamocean.com/vod/2011/08/24/streamocean-51A94E98-03CA-2A21-FF90-C580A4F97C1C?fmt=x264_1605k_mpegts"
+                                       repeatCount="1" clipEnd="npt=300s">
+                                    <param name="ctype" value="vod" valuetype="data"/>
+                                </video>
+                                <video src="http://jxqzw.streamocean.com/vod/2011/08/24/streamocean-1C83FCE5-2EB9-FD87-425B-80FEC05DFD02?fmt=x264_1619k_mpegts"
+                                       repeatCount="1" clipEnd="npt=300s">
+                                    <param name="ctype" value="vod" valuetype="data"/>
+                                </video>
+                                <video src="http://jxqzw.streamocean.com/vod/2011/08/24/streamocean-57A622B0-42D6-3A78-F9AA-A755522AD139?fmt=x264_1615k_mpegts"
+                                       repeatCount="1" clipEnd="npt=300s">
+                                    <param name="ctype" value="vod" valuetype="data"/>
+                                </video>
+                            </seq>
+                        </body>
+                    </smil>
+                </file>
+                <file>
+                    <timeshift>-2</timeshift>
+                    <streamsense>1</streamsense>
+                    <smil xmlns="http://www.w3.org/ns/SMIL" xml:id="root" version="3.0" baseProfile="x-OSVC">
+                        <head xml:id="head">
+                            <meta name="codec" content="x264"/>
+                            <meta name="format" content="ts"/>
+                            <meta name="bitrate" content="800"/>
+                            <meta name="server" content="tss"/>
+                            <meta name="resolution" content="6"/>
+                        </head>
+                        <body xml:id="body">
+                            <seq repeatCount="indefinite">
+                                <video src="http://jxqzw.streamocean.com/vod/2011/08/24/streamocean-2C7F82B3-7EB8-E1BC-EDA9-B3D57B52E96D?fmt=x264_878k_mpegts"
+                                       repeatCount="1" clipEnd="npt=300s">
+                                    <param name="ctype" value="vod" valuetype="data"/>
+                                </video>
+                                <video src="http://jxqzw.streamocean.com/vod/2011/08/24/streamocean-51A94E98-03CA-2A21-FF90-C580A4F97C1C?fmt=x264_866k_mpegts"
+                                       repeatCount="1" clipEnd="npt=300s">
+                                    <param name="ctype" value="vod" valuetype="data"/>
+                                </video>
+                                <video src="http://jxqzw.streamocean.com/vod/2011/08/24/streamocean-1C83FCE5-2EB9-FD87-425B-80FEC05DFD02?fmt=x264_876k_mpegts"
+                                       repeatCount="1" clipEnd="npt=300s">
+                                    <param name="ctype" value="vod" valuetype="data"/>
+                                </video>
+                                <video src="http://jxqzw.streamocean.com/vod/2011/08/24/streamocean-57A622B0-42D6-3A78-F9AA-A755522AD139?fmt=x264_875k_mpegts"
+                                       repeatCount="1" clipEnd="npt=300s">
+                                    <param name="ctype" value="vod" valuetype="data"/>
+                                </video>
+                            </seq>
+                        </body>
+                    </smil>
+                </file>
+            </files>
+        </content>
+    </upload>
 </root>

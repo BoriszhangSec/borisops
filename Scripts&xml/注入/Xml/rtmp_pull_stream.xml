@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
-	<upload protocol="full">
-		<content>
-			<ctype>live</ctype>
-			<guid>cnlive@eyule-rtmp</guid>
-			<title>cnlive@eyule-rtmp</title>
-			<files>
-				<file>
-					<format>flv</format>
-					<server>RTMP</server>
-					<name>rtmp://192.168.100.78:1935/live/eyule</name>
-					<codec>x264</codec>
-					<bitrate>400</bitrate>
-					<streamsense>0</streamsense>
-					<timeshift>0</timeshift>
-				</file>
-			</files>
-		</content>
-	</upload>
+    <upload protocol="full">
+        <content>
+            <ctype>live</ctype>
+            <guid>cnlive@eyule-rtmp</guid>
+            <title>cnlive@eyule-rtmp</title>
+            <files>
+                <file>
+                    <format>flv</format>
+                    <server>RTMP</server>
+                    <name>rtmp://192.168.100.78:1935/live/eyule</name>
+                    <codec>x264</codec>
+                    <bitrate>400</bitrate>
+                    <streamsense>0</streamsense>
+                    <timeshift>0</timeshift>
+                </file>
+            </files>
+        </content>
+    </upload>
 </root>

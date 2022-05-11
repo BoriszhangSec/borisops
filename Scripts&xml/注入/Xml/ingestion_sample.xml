@@ -1,20 +1,20 @@
 <root>
-  <upload>
+    <upload>
 
-    <content>
-    <ctype>vod</ctype>
-    <files>
-      <file>
-        <bitrate>200k</bitrate>
-        <format>mp4</format>
-        <codec>h264</codec>
-        <name>videos/tangled_200k.mp4</name>
-        <download>1</download>
-      </file>
-    </files>
-    <title>tangled_200k</title>
-    <guid>tangled_200k</guid>
-    <description>tangled_200k</description>
-    </content>
-  </upload>
+        <content>
+            <ctype>vod</ctype>
+            <files>
+                <file>
+                    <bitrate>200k</bitrate>
+                    <format>mp4</format>
+                    <codec>h264</codec>
+                    <name>videos/tangled_200k.mp4</name>
+                    <download>1</download>
+                </file>
+            </files>
+            <title>tangled_200k</title>
+            <guid>tangled_200k</guid>
+            <description>tangled_200k</description>
+        </content>
+    </upload>
 </root>

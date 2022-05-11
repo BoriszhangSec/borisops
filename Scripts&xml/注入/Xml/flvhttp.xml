@@ -1,25 +1,25 @@
 <root>
-  <upload>
-    <content>
-      <publishdate>2010-01-27</publishdate>
-      <thumbnail></thumbnail>
-      <ctype>live</ctype>
-      <expireddate>2010-02-05</expireddate>
-      <timezone>GMT+8</timezone>
-      <files>
-        <file>
-          <codec>h264</codec>
-          <bitrate>500</bitrate>
-          <format>flv</format>
-          <name>http://172.16.1.244:8088/flv0</name>
-          <server>flv</server>
-        </file>
-      </files>
-      <description></description>
-      <createdate>2010-01-26</createdate>
-      <guid>flvlive</guid>
-      <title>flvlive</title>
-    </content>
-</upload>
+    <upload>
+        <content>
+            <publishdate>2010-01-27</publishdate>
+            <thumbnail></thumbnail>
+            <ctype>live</ctype>
+            <expireddate>2010-02-05</expireddate>
+            <timezone>GMT+8</timezone>
+            <files>
+                <file>
+                    <codec>h264</codec>
+                    <bitrate>500</bitrate>
+                    <format>flv</format>
+                    <name>http://172.16.1.244:8088/flv0</name>
+                    <server>flv</server>
+                </file>
+            </files>
+            <description></description>
+            <createdate>2010-01-26</createdate>
+            <guid>flvlive</guid>
+            <title>flvlive</title>
+        </content>
+    </upload>
 </root>
 
